@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     A[User clicks "Forgot Password"] --> B[Redirect to Email Entry Page]
     B --> C[User enters email]
