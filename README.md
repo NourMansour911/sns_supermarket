@@ -2,24 +2,16 @@
 sequenceDiagram
     autonumber
     actor User
-    participant "Frontend" as FE
-    participant "Authentication Service" as AuthService
-    participant "Database" as DB
-    participant "Logging Service" as LogService
+    participant "Registration Interface" as RegUI
+    participant Database
+    participant "Home Page" as Home
 
-    User->>FE: Initiate Login
-    FE->>AuthService: Request Authentication
-    alt User credentials valid
-        AuthService->>DB: Fetch user data
-        DB-->>AuthService: Send user data
-        AuthService-->>FE: Authentication successful
-        FE-->>User: Login successful
-        par 
-            FE->>LogService: Log login activity
-            FE->>User: Display dashboard
-        end
-    else User credentials invalid
-        AuthService-->>FE: Authentication failed
-        FE-->>User: Show error message
+    User->>RegUI: Enter user details
+    alt Valid Data
+        RegUI->>Database: Save data
+        Database-->>RegUI: Data saved
+        RegUI-->>User: Account registered
+        User->>Home: Redirect to Home Page
+    else Invalid Data
+        RegUI-->>User: Display Error Message
     end
-    Note right of FE: End of process
