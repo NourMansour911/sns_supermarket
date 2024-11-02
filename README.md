@@ -1,7 +1,4 @@
 
-### 2. **Login Process Activity Diagram**
-
-```markdown
 ```mermaid
 flowchart TD
     A[Start] --> B[Enter Email and Password]
