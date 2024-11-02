@@ -1,7 +1,7 @@
 
 ```mermaid
 flowchart TD
-    A[Start] --> B[User clicks "Forgot Password"]
+    A[Start] --> B[User clicks ]
     B --> C[Redirect to Email Entry Page]
     C --> D[User enters email]
     D --> E[Check email in database]
