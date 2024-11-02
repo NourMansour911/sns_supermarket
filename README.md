@@ -1,7 +1,3 @@
-
-### 5. **Ordering a Coach Activity Diagram**
-
-```markdown
 ```mermaid
 flowchart TD
     A[Start] --> B[Search for Nearby Coach]
